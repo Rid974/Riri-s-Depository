@@ -3,7 +3,7 @@ import numpy_financial as npf
 import numpy as np
 
 #Intro
-print("Welcome to this program which will help you in your investment decision ! \nYou'll give me informations on your investment  and i'll compute: \n\n-The Net Plus Value, \n-Internal Return rate \n-Excess Return")
+print("\n\n\n\n\nWelcome to this program which will help you in your investment decision ! \n\nYou'll give me information on your project and i'll tell you:\n-The Net Plus Value, \n-Internal Return rate \n-Excess Return")
 
 # asking the duration of the study and setting it in a list
 duration = input("\nWhat's the duration of our study ? ")
@@ -34,7 +34,7 @@ def ask_CFF(para2):
         cfflst.append(cff0)
         return cfflst
     else:
-      print("\nWhat are the FCF for the {} years of our study ?\n(put a space between each FCF) ".format(duration))
+      print("\nWhat are the FCF for the {} periods of our study ?\n(put a space between each FCF) ".format(duration))
       inputcff = input("").split(" ")
       for inputc in inputcff:
           cfflst.append(float(inputc))
@@ -87,7 +87,7 @@ def return_investment_computing(years,fixed,cost,fcf2,rate):
 
 return_investment_computing(final_time_line,yorn,input_investment,cfflst,(discountr/100))
 
-print(("\n\n\nFor an investment of {} On a {} period, \nThe IRR for this project is {}% \nAnd with a Discount rate of {}% \nthe NPV will be {}\nAnd the Excess return {}%.").format(input_investment,duration,round(result_lst[1]),discountr,round(result_lst[0]),round(result_lst[2])))
+print(("\n\n\nFor an investment of {} On {} periods, \nThe IRR for this project is {}% \nAnd with a Discount rate of {}% \nThe NPV will be {}\nAnd the Excess return {}%.").format(input_investment,duration,round(result_lst[1]),discountr,round(result_lst[0]),round(result_lst[2])))
 
 if result_lst[0] > 0 and result_lst[1]> 0 :
     print("\nYou should pursue this project, you will make money!\n\n\n\n\n")
