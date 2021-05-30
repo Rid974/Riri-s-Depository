@@ -89,8 +89,8 @@ return_investment_computing(final_time_line,yorn,input_investment,cfflst,(discou
 
 print(("\n\n\nFor an investment of {} On a {} period, \nThe IRR for this project is {}% \nAnd with a Discount rate of {}% \nthe NPV will be {}\nAnd the Excess return {}%.").format(input_investment,duration,round(result_lst[1]),discountr,round(result_lst[0]),round(result_lst[2])))
 
-if result_lst[0] >= 0:
-    print("\nYou should pursue this project it's a good investment to make money!\n\n\n\n\n")
+if result_lst[0] > 0 and result_lst[1]> 0 :
+    print("\nYou should pursue this project, you will make money!\n\n\n\n\n")
 else:
     print("\nYou shouldn't invest in this project, you'll loose money !\n\n\n\n\n")
 
