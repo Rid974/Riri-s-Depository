@@ -1,7 +1,7 @@
 
+import numpy_financial as np  
 #Intro
-
-print("Welcome to this program which will help you in your investment decision ! ")
+print("Welcome to this program which will help you in your investment decision ! ""you'll give me informations on your investment  and i'll compute the ")
 
 # asking the duration of the study and setting it in a list
 duration = int(input("duration of the study ? "))
@@ -58,9 +58,11 @@ def return_investment_computing(years,fixed,cost,fcf2,rate):
         for year in years[1:]:
             npv += (fcf2[0]/((1+rate)**(year)))
         #irr computation
+        irr += np.irr([(-cost),fcf2])
 
         #excess return computation
     result_lst.append(npv)
+    result_lst.append(irr)
     return result_lst
 
 return_investment_computing(final_time_line,yorn,input_investment,cfflst,(discountr/100))
